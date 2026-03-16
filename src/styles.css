@@ -1,0 +1,96 @@
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:white;
+}
+
+/* HEADER */
+
+.header{
+  background:#001c42;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:28px;
+  font-weight:600;
+}
+
+/* NAVBAR */
+
+.navbar{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:15px;
+  border-bottom:1px solid #ddd;
+}
+
+.navlink{
+  text-decoration:none;
+  color:#001c42;
+  font-weight:500;
+}
+
+.navlink:hover{
+  text-decoration:underline;
+}
+
+/* PAGE */
+
+.page{
+  display:flex;
+  justify-content:center;
+  margin-top:60px;
+}
+
+/* BOX */
+
+.box{
+  width:450px;
+  border:1px solid #ddd;
+  padding:30px;
+  border-radius:6px;
+  text-align:center;
+}
+
+/* TITLE */
+
+.title{
+  font-size:22px;
+  margin-bottom:10px;
+  color:#001c42;
+}
+
+/* DESCRIPTION */
+
+.desc{
+  font-size:14px;
+  margin-bottom:25px;
+  color:#555;
+}
+
+/* BUTTON */
+
+.btn{
+  background:#001c42;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  margin:5px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  opacity:0.9;
+}
+
+/* STATUS */
+
+.status{
+  margin-top:20px;
+  padding:10px;
+  background:#f4f6fa;
+  border-radius:4px;
+  font-size:13px;
+}
