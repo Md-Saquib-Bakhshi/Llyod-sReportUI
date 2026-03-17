@@ -1,4 +1,4 @@
-export default function ActionBox({title,description,buttons,status}){
+export default function ActionBox({title, description, buttons}){
 
   return(
 
@@ -12,14 +12,7 @@ export default function ActionBox({title,description,buttons,status}){
         {buttons}
       </div>
 
-      {status && (
-        <div className="status">
-          {status}
-        </div>
-      )}
-
     </div>
 
   )
-
 }

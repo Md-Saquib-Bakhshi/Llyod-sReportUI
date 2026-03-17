@@ -1,27 +1,41 @@
 import { useState } from "react"
 import { runReport923, processReplies } from "../services/api"
 import ActionBox from "../components/ActionBox"
+import StatusBox from "../components/StatusBox"
 
 export default function Report923(){
 
-  const [status,setStatus] = useState("Idle")
+  const [status,setStatus] = useState("")
+  const [type,setType] = useState("")
 
   const generate = async()=>{
 
+    setType("running")
     setStatus("Generating report...")
 
-    const res = await runReport923()
-
-    setStatus(JSON.stringify(res.data))
+    try{
+      const res = await runReport923()
+      setType("success")
+      setStatus(JSON.stringify(res.data, null, 2))
+    }catch{
+      setType("error")
+      setStatus("Error generating report")
+    }
   }
 
   const process = async()=>{
 
+    setType("running")
     setStatus("Processing replies...")
 
-    const res = await processReplies()
-
-    setStatus(JSON.stringify(res.data))
+    try{
+      const res = await processReplies()
+      setType("success")
+      setStatus(JSON.stringify(res.data, null, 2))
+    }catch{
+      setType("error")
+      setStatus("Error processing replies")
+    }
   }
 
   return(
@@ -30,8 +44,7 @@ export default function Report923(){
 
       <ActionBox
         title="Report 923 Automation"
-        description="Generates Lloyd's Report 923 and processes reply mails from fund managers."
-
+        description="Generates Lloyd's Report 923 and processes reply mails."
         buttons={
           <>
             <button className="btn" onClick={generate}>
@@ -43,12 +56,11 @@ export default function Report923(){
             </button>
           </>
         }
-
-        status={status}
       />
+
+      <StatusBox status={status} type={type} />
 
     </div>
 
   )
-
 }
