@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar"
 import Report923 from "./pages/Report923"
 import Report12 from "./pages/Report12"
 import ReportFactsheet from "./pages/ReportFactsheet"
-
+import Logs from "./pages/Logs"
 export default function App(){
 
   return(
@@ -24,6 +24,8 @@ export default function App(){
         <Route path="/report12" element={<Report12/>} />
 
         <Route path="/factsheet" element={<ReportFactsheet/>} />
+
+        <Route path="/logs" element={<Logs/>} />
 
       </Routes>
 

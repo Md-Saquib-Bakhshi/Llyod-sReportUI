@@ -18,6 +18,10 @@ export default function Navbar(){
         Factsheet
       </Link>
 
+      <Link className="navlink" to="/logs">
+        Logs
+      </Link>
+
     </div>
 
   )
